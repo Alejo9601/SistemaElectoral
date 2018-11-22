@@ -18,8 +18,7 @@ public class SistemaElectoral {
      */
     public static void main(String[] args) {
       
-        Principal ventanaPrincipal = new Principal();
-        
+        Principal ventanaPrincipal = new Principal();   
         ventanaPrincipal.setVisible(true);
         ventanaPrincipal.setLocationRelativeTo(null);
         

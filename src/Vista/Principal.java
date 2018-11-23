@@ -1,4 +1,3 @@
-
 package Vista;
 
 import java.awt.Color;
@@ -16,8 +15,6 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
     }
 
-    
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,10 +25,13 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnRegistrarElector = new javax.swing.JButton();
         btnImportarDatosDeArchivo = new javax.swing.JButton();
+        btnPadronElectoral = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -49,15 +49,82 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 255));
 
+        jTable1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nombre de Actividad", "Fecha inicio", "Duracion", "Fecha fin"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jTable1.setEnabled(false);
+        jScrollPane1.setViewportView(jTable1);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 518, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
@@ -106,6 +173,26 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        btnPadronElectoral.setBackground(new java.awt.Color(204, 204, 255));
+        btnPadronElectoral.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnPadronElectoral.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Lista.png"))); // NOI18N
+        btnPadronElectoral.setText("Padron Electoral");
+        btnPadronElectoral.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnPadronElectoral.setBorderPainted(false);
+        btnPadronElectoral.setContentAreaFilled(false);
+        btnPadronElectoral.setFocusable(false);
+        btnPadronElectoral.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnPadronElectoral.setIconTextGap(8);
+        btnPadronElectoral.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnPadronElectoral.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnPadronElectoralMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnPadronElectoralMouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -113,10 +200,12 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(272, 272, 272)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnImportarDatosDeArchivo)
                         .addGap(18, 18, 18)
-                        .addComponent(btnRegistrarElector))
+                        .addComponent(btnRegistrarElector)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnPadronElectoral))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1)))
@@ -130,8 +219,9 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnRegistrarElector, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnImportarDatosDeArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnImportarDatosDeArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPadronElectoral, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(153, 255, 153));
@@ -177,7 +267,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addContainerGap(240, Short.MAX_VALUE))
+                .addContainerGap(230, Short.MAX_VALUE))
         );
 
         jMenu1.setText("Configuracion de la Eleccion");
@@ -245,7 +335,8 @@ public class Principal extends javax.swing.JFrame {
 
     /**
      * Metodo que se accionara una vez que se pase el puntero sobre el boton.
-     * @param evt 
+     *
+     * @param evt
      */
     private void btnRegistrarElectorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarElectorMouseEntered
         btnRegistrarElector.setContentAreaFilled(true);
@@ -253,24 +344,53 @@ public class Principal extends javax.swing.JFrame {
 
     /**
      * Metodo que se accionara una vez que se quite el puntero sobre el boton.
-     * @param evt 
+     *
+     * @param evt
      */
     private void btnRegistrarElectorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarElectorMouseExited
-       btnRegistrarElector.setContentAreaFilled(false);
+        btnRegistrarElector.setContentAreaFilled(false);
     }//GEN-LAST:event_btnRegistrarElectorMouseExited
 
+    /**
+     * Metodo que se accionara una vez que se pase el puntero sobre el boton.
+     *
+     * @param evt
+     */
     private void btnImportarDatosDeArchivoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnImportarDatosDeArchivoMouseEntered
-         btnImportarDatosDeArchivo.setContentAreaFilled(true);
+        btnImportarDatosDeArchivo.setContentAreaFilled(true);
     }//GEN-LAST:event_btnImportarDatosDeArchivoMouseEntered
 
+    /**
+     * Metodo que se accionara una vez que se quite el puntero sobre el boton.
+     *
+     * @param evt
+     */
     private void btnImportarDatosDeArchivoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnImportarDatosDeArchivoMouseExited
         btnImportarDatosDeArchivo.setContentAreaFilled(false);
     }//GEN-LAST:event_btnImportarDatosDeArchivoMouseExited
 
-    
+    /**
+     * Metodo que se accionara una vez que se pase el puntero sobre el boton.
+     *
+     * @param evt
+     */
+    private void btnPadronElectoralMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPadronElectoralMouseEntered
+        btnPadronElectoral.setContentAreaFilled(true);
+    }//GEN-LAST:event_btnPadronElectoralMouseEntered
+
+    /**
+     * Metodo que se accionara una vez que se quite el puntero sobre el boton.
+     *
+     * @param evt
+     */
+    private void btnPadronElectoralMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPadronElectoralMouseExited
+        btnPadronElectoral.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnPadronElectoralMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnImportarDatosDeArchivo;
+    private javax.swing.JButton btnPadronElectoral;
     private javax.swing.JButton btnRegistrarElector;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -287,5 +407,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

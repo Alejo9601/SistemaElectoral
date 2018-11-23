@@ -7,7 +7,7 @@ package Vista;
 
 /**
  *
- * @author marco tornese
+ * @author marco t
  */
 public class Login extends javax.swing.JFrame {
 

@@ -30,8 +30,8 @@ public class Principal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        btnRegistrarElector = new javax.swing.JButton();
         btnImportarDatosDeArchivo = new javax.swing.JButton();
-        btnImportarDatosDeArchivo1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -66,10 +66,30 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Gestion de Electores");
 
+        btnRegistrarElector.setBackground(new java.awt.Color(204, 204, 255));
+        btnRegistrarElector.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnRegistrarElector.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Nuevo Elector.png"))); // NOI18N
+        btnRegistrarElector.setText("Registrar Elector");
+        btnRegistrarElector.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRegistrarElector.setBorderPainted(false);
+        btnRegistrarElector.setContentAreaFilled(false);
+        btnRegistrarElector.setFocusable(false);
+        btnRegistrarElector.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnRegistrarElector.setIconTextGap(8);
+        btnRegistrarElector.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnRegistrarElector.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnRegistrarElectorMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnRegistrarElectorMouseExited(evt);
+            }
+        });
+
         btnImportarDatosDeArchivo.setBackground(new java.awt.Color(204, 204, 255));
         btnImportarDatosDeArchivo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnImportarDatosDeArchivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Importar.png"))); // NOI18N
-        btnImportarDatosDeArchivo.setText("Registrar Elector");
+        btnImportarDatosDeArchivo.setText("Importar Electores");
         btnImportarDatosDeArchivo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnImportarDatosDeArchivo.setBorderPainted(false);
         btnImportarDatosDeArchivo.setContentAreaFilled(false);
@@ -86,26 +106,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        btnImportarDatosDeArchivo1.setBackground(new java.awt.Color(204, 204, 255));
-        btnImportarDatosDeArchivo1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnImportarDatosDeArchivo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Importar.png"))); // NOI18N
-        btnImportarDatosDeArchivo1.setText("Importar Electores");
-        btnImportarDatosDeArchivo1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnImportarDatosDeArchivo1.setBorderPainted(false);
-        btnImportarDatosDeArchivo1.setContentAreaFilled(false);
-        btnImportarDatosDeArchivo1.setFocusable(false);
-        btnImportarDatosDeArchivo1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnImportarDatosDeArchivo1.setIconTextGap(8);
-        btnImportarDatosDeArchivo1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnImportarDatosDeArchivo1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnImportarDatosDeArchivo1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnImportarDatosDeArchivo1MouseExited(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -113,13 +113,13 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel1))
+                        .addGap(272, 272, 272)
+                        .addComponent(btnImportarDatosDeArchivo)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRegistrarElector))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(btnImportarDatosDeArchivo1)
-                        .addGap(72, 72, 72)
-                        .addComponent(btnImportarDatosDeArchivo)))
+                        .addContainerGap()
+                        .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -129,8 +129,8 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnImportarDatosDeArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnImportarDatosDeArchivo1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnRegistrarElector, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnImportarDatosDeArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -247,31 +247,31 @@ public class Principal extends javax.swing.JFrame {
      * Metodo que se accionara una vez que se pase el puntero sobre el boton.
      * @param evt 
      */
-    private void btnImportarDatosDeArchivoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnImportarDatosDeArchivoMouseEntered
-        btnImportarDatosDeArchivo.setContentAreaFilled(true);
-    }//GEN-LAST:event_btnImportarDatosDeArchivoMouseEntered
+    private void btnRegistrarElectorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarElectorMouseEntered
+        btnRegistrarElector.setContentAreaFilled(true);
+    }//GEN-LAST:event_btnRegistrarElectorMouseEntered
 
     /**
      * Metodo que se accionara una vez que se quite el puntero sobre el boton.
      * @param evt 
      */
+    private void btnRegistrarElectorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarElectorMouseExited
+       btnRegistrarElector.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnRegistrarElectorMouseExited
+
+    private void btnImportarDatosDeArchivoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnImportarDatosDeArchivoMouseEntered
+         btnImportarDatosDeArchivo.setContentAreaFilled(true);
+    }//GEN-LAST:event_btnImportarDatosDeArchivoMouseEntered
+
     private void btnImportarDatosDeArchivoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnImportarDatosDeArchivoMouseExited
-       btnImportarDatosDeArchivo.setContentAreaFilled(false);
+        btnImportarDatosDeArchivo.setContentAreaFilled(false);
     }//GEN-LAST:event_btnImportarDatosDeArchivoMouseExited
-
-    private void btnImportarDatosDeArchivo1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnImportarDatosDeArchivo1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnImportarDatosDeArchivo1MouseEntered
-
-    private void btnImportarDatosDeArchivo1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnImportarDatosDeArchivo1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnImportarDatosDeArchivo1MouseExited
 
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnImportarDatosDeArchivo;
-    private javax.swing.JButton btnImportarDatosDeArchivo1;
+    private javax.swing.JButton btnRegistrarElector;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

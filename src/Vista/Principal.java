@@ -13,7 +13,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        jtCalendar.getTableHeader().setFont(new Font("Tahoma",3,16));
+        jtCalendar.getTableHeader().setFont(new Font("Tahoma", 3, 16));
     }
 
     /**
@@ -40,6 +40,8 @@ public class Principal extends javax.swing.JFrame {
         btnGenerarBoletas = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        btnAutoridadesDeMesa = new javax.swing.JButton();
+        btnMesasDeComisio = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -336,13 +338,60 @@ public class Principal extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Gestion de Comisio");
 
+        btnAutoridadesDeMesa.setBackground(new java.awt.Color(204, 204, 255));
+        btnAutoridadesDeMesa.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnAutoridadesDeMesa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/sombrero.png"))); // NOI18N
+        btnAutoridadesDeMesa.setText("Autoridades de Mesa");
+        btnAutoridadesDeMesa.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAutoridadesDeMesa.setBorderPainted(false);
+        btnAutoridadesDeMesa.setContentAreaFilled(false);
+        btnAutoridadesDeMesa.setFocusable(false);
+        btnAutoridadesDeMesa.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAutoridadesDeMesa.setIconTextGap(8);
+        btnAutoridadesDeMesa.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnAutoridadesDeMesa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAutoridadesDeMesaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAutoridadesDeMesaMouseExited(evt);
+            }
+        });
+
+        btnMesasDeComisio.setBackground(new java.awt.Color(204, 204, 255));
+        btnMesasDeComisio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnMesasDeComisio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/escritorio.png"))); // NOI18N
+        btnMesasDeComisio.setText("Mesas de comisio");
+        btnMesasDeComisio.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnMesasDeComisio.setBorderPainted(false);
+        btnMesasDeComisio.setContentAreaFilled(false);
+        btnMesasDeComisio.setFocusable(false);
+        btnMesasDeComisio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnMesasDeComisio.setIconTextGap(8);
+        btnMesasDeComisio.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnMesasDeComisio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnMesasDeComisioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnMesasDeComisioMouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(btnMesasDeComisio)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAutoridadesDeMesa)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -350,7 +399,11 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAutoridadesDeMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMesasDeComisio, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jMenu1.setText("Configuracion de la Eleccion");
@@ -470,7 +523,7 @@ public class Principal extends javax.swing.JFrame {
         btnPadronElectoral.setContentAreaFilled(false);
     }//GEN-LAST:event_btnPadronElectoralMouseExited
 
-     /**
+    /**
      * Metodo que se accionara una vez que se pase el puntero sobre el boton.
      *
      * @param evt
@@ -494,7 +547,7 @@ public class Principal extends javax.swing.JFrame {
      * @param evt
      */
     private void btnPublicarCandidatoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPublicarCandidatoMouseEntered
-         btnPublicarCandidato.setContentAreaFilled(true);
+        btnPublicarCandidato.setContentAreaFilled(true);
     }//GEN-LAST:event_btnPublicarCandidatoMouseEntered
 
     /**
@@ -503,7 +556,7 @@ public class Principal extends javax.swing.JFrame {
      * @param evt
      */
     private void btnPublicarCandidatoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPublicarCandidatoMouseExited
-         btnPublicarCandidato.setContentAreaFilled(false);
+        btnPublicarCandidato.setContentAreaFilled(false);
     }//GEN-LAST:event_btnPublicarCandidatoMouseExited
 
     /**
@@ -524,11 +577,51 @@ public class Principal extends javax.swing.JFrame {
         btnGenerarBoletas.setContentAreaFilled(false);
     }//GEN-LAST:event_btnGenerarBoletasMouseExited
 
+    /**
+     * Metodo que se accionara una vez que se pase el puntero sobre el boton.
+     *
+     * @param evt
+     */
+    private void btnAutoridadesDeMesaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAutoridadesDeMesaMouseEntered
+        btnAutoridadesDeMesa.setContentAreaFilled(true);
+
+    }//GEN-LAST:event_btnAutoridadesDeMesaMouseEntered
+
+    /**
+     * Metodo que se accionara una vez que se quite el puntero sobre el boton.
+     *
+     * @param evt
+     */
+    private void btnAutoridadesDeMesaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAutoridadesDeMesaMouseExited
+        btnAutoridadesDeMesa.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnAutoridadesDeMesaMouseExited
+
+    /**
+     * Metodo que se accionara una vez que se pase el puntero sobre el boton.
+     *
+     * @param evt
+     */
+    private void btnMesasDeComisioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMesasDeComisioMouseEntered
+        btnMesasDeComisio.setContentAreaFilled(true);
+    }//GEN-LAST:event_btnMesasDeComisioMouseEntered
+
+    /**
+     * Metodo que se accionara una vez que se quite el puntero sobre el boton.
+     *
+     * @param evt
+     */
+    private void btnMesasDeComisioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMesasDeComisioMouseExited
+        btnMesasDeComisio.setContentAreaFilled(false);
+
+    }//GEN-LAST:event_btnMesasDeComisioMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAutoridadesDeMesa;
     private javax.swing.JButton btnCrearListaCandidato;
     private javax.swing.JButton btnGenerarBoletas;
     private javax.swing.JButton btnImportarDatosDeArchivo;
+    private javax.swing.JButton btnMesasDeComisio;
     private javax.swing.JButton btnPadronElectoral;
     private javax.swing.JButton btnPublicarCandidato;
     private javax.swing.JButton btnRegistrarElector;

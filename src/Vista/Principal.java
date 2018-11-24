@@ -1,6 +1,6 @@
 package Vista;
 
-import java.awt.Color;
+import java.awt.Font;
 
 /**
  *
@@ -13,6 +13,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        jtCalendar.getTableHeader().setFont(new Font("Tahoma",3,16));
     }
 
     /**
@@ -26,7 +27,7 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jtCalendar = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnRegistrarElector = new javax.swing.JButton();
@@ -35,6 +36,8 @@ public class Principal extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btnCrearListaCandidato = new javax.swing.JButton();
+        btnPublicarCandidato = new javax.swing.JButton();
+        btnGenerarBoletas = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -48,10 +51,11 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jTable1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jtCalendar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jtCalendar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -97,7 +101,7 @@ public class Principal extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Nombre de Actividad", "Articulo", "Fecha inicio", "Duracion", "Fecha fin"
+                " Actividad", "Articulo", "Fecha inicio", "Duracion", "Fecha fin"
             }
         ) {
             Class[] types = new Class [] {
@@ -108,8 +112,8 @@ public class Principal extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setEnabled(false);
-        jScrollPane1.setViewportView(jTable1);
+        jtCalendar.setEnabled(false);
+        jScrollPane1.setViewportView(jtCalendar);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -117,18 +121,19 @@ public class Principal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 699, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -201,7 +206,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(67, Short.MAX_VALUE)
+                        .addContainerGap(78, Short.MAX_VALUE)
                         .addComponent(btnImportarDatosDeArchivo)
                         .addGap(18, 18, 18)
                         .addComponent(btnRegistrarElector)
@@ -210,7 +215,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,13 +231,14 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jPanel3.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Gestion de Candidatos");
 
         btnCrearListaCandidato.setBackground(new java.awt.Color(204, 204, 255));
-        btnCrearListaCandidato.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnCrearListaCandidato.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnCrearListaCandidato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/candidato.png"))); // NOI18N
         btnCrearListaCandidato.setText("Listas de candidatos");
         btnCrearListaCandidato.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -251,6 +257,46 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        btnPublicarCandidato.setBackground(new java.awt.Color(204, 204, 255));
+        btnPublicarCandidato.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnPublicarCandidato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/politico.png"))); // NOI18N
+        btnPublicarCandidato.setText("Publicar Candidato");
+        btnPublicarCandidato.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnPublicarCandidato.setBorderPainted(false);
+        btnPublicarCandidato.setContentAreaFilled(false);
+        btnPublicarCandidato.setFocusable(false);
+        btnPublicarCandidato.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnPublicarCandidato.setIconTextGap(8);
+        btnPublicarCandidato.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnPublicarCandidato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnPublicarCandidatoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnPublicarCandidatoMouseExited(evt);
+            }
+        });
+
+        btnGenerarBoletas.setBackground(new java.awt.Color(204, 204, 255));
+        btnGenerarBoletas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnGenerarBoletas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/folleto.png"))); // NOI18N
+        btnGenerarBoletas.setText("Generar Boletas");
+        btnGenerarBoletas.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnGenerarBoletas.setBorderPainted(false);
+        btnGenerarBoletas.setContentAreaFilled(false);
+        btnGenerarBoletas.setFocusable(false);
+        btnGenerarBoletas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnGenerarBoletas.setIconTextGap(8);
+        btnGenerarBoletas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnGenerarBoletas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnGenerarBoletasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnGenerarBoletasMouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -262,20 +308,29 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jLabel2))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(65, 65, 65)
-                        .addComponent(btnCrearListaCandidato)))
+                        .addComponent(btnCrearListaCandidato)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnPublicarCandidato)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnGenerarBoletas, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCrearListaCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnPublicarCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnCrearListaCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnGenerarBoletas, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(153, 153, 0));
+        jPanel4.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -338,9 +393,9 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(12, 12, 12))
         );
         layout.setVerticalGroup(
@@ -350,11 +405,10 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 123, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(12, 12, 12))
         );
@@ -434,11 +488,49 @@ public class Principal extends javax.swing.JFrame {
         btnCrearListaCandidato.setContentAreaFilled(false);
     }//GEN-LAST:event_btnCrearListaCandidatoMouseExited
 
+    /**
+     * Metodo que se accionara una vez que se pase el puntero sobre el boton.
+     *
+     * @param evt
+     */
+    private void btnPublicarCandidatoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPublicarCandidatoMouseEntered
+         btnPublicarCandidato.setContentAreaFilled(true);
+    }//GEN-LAST:event_btnPublicarCandidatoMouseEntered
+
+    /**
+     * Metodo que se accionara una vez que se quite el puntero sobre el boton.
+     *
+     * @param evt
+     */
+    private void btnPublicarCandidatoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPublicarCandidatoMouseExited
+         btnPublicarCandidato.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnPublicarCandidatoMouseExited
+
+    /**
+     * Metodo que se accionara una vez que se pase el puntero sobre el boton.
+     *
+     * @param evt
+     */
+    private void btnGenerarBoletasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGenerarBoletasMouseEntered
+        btnGenerarBoletas.setContentAreaFilled(true);
+    }//GEN-LAST:event_btnGenerarBoletasMouseEntered
+
+    /**
+     * Metodo que se accionara una vez que se quite el puntero sobre el boton.
+     *
+     * @param evt
+     */
+    private void btnGenerarBoletasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGenerarBoletasMouseExited
+        btnGenerarBoletas.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnGenerarBoletasMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrearListaCandidato;
+    private javax.swing.JButton btnGenerarBoletas;
     private javax.swing.JButton btnImportarDatosDeArchivo;
     private javax.swing.JButton btnPadronElectoral;
+    private javax.swing.JButton btnPublicarCandidato;
     private javax.swing.JButton btnRegistrarElector;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -456,6 +548,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jtCalendar;
     // End of variables declaration//GEN-END:variables
 }

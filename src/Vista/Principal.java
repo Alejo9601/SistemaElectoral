@@ -1,10 +1,11 @@
 package Vista;
 
+import Controlador.CoordinadorlInicioSistema;
 import java.awt.Font;
 
 /**
  *
- * @author usuario
+ * @author Alejandro Juarez
  */
 public class Principal extends javax.swing.JFrame {
 
@@ -13,7 +14,18 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        jtCalendar.getTableHeader().setFont(new Font("Tahoma", 3, 16));
+        
+        //Configuracion de el header de la tabla
+        jtCalendar.getTableHeader().setFont(new Font("Tahoma", 3, 16)); 
+    }
+    
+    /**
+     * Metodo para setear el coordinador de la ventana.
+     *
+     * @param coordinador
+     */
+    public void setCoordinador(CoordinadorlInicioSistema coordinador) {
+        
     }
 
     /**
@@ -43,13 +55,16 @@ public class Principal extends javax.swing.JFrame {
         btnAutoridadesDeMesa = new javax.swing.JButton();
         btnMesasDeComisio = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        jmConfiguracionDeEleccion = new javax.swing.JMenu();
+        jmElectores = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
+        jmListasYCandidatos = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jmMesasDeComisio = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -130,7 +145,7 @@ public class Principal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 699, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 687, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -406,34 +421,66 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("Configuracion de la Eleccion");
-        jMenu1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.setBackground(new java.awt.Color(0, 0, 0));
+        jMenuBar1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jMenu2.setText("Electores");
-        jMenu2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jmConfiguracionDeEleccion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
+        jmConfiguracionDeEleccion.setForeground(new java.awt.Color(255, 255, 255));
+        jmConfiguracionDeEleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/ajustes.png"))); // NOI18N
+        jmConfiguracionDeEleccion.setText("Configuracion de la Eleccion");
+        jmConfiguracionDeEleccion.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jmConfiguracionDeEleccion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jmConfiguracionDeEleccionMouseExited(evt);
+            }
+        });
+        jMenuBar1.add(jmConfiguracionDeEleccion);
 
-        jMenuItem1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jmElectores.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
+        jmElectores.setForeground(new java.awt.Color(255, 255, 255));
+        jmElectores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/usuario.png"))); // NOI18N
+        jmElectores.setText("Electores");
+        jmElectores.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+
+        jMenuItem1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jMenuItem1.setText("Importar Electores desde archivo");
-        jMenu2.add(jMenuItem1);
+        jmElectores.add(jMenuItem1);
 
-        jMenuItem2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jMenuItem2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jMenuItem2.setText("Alta de Elector");
-        jMenu2.add(jMenuItem2);
+        jmElectores.add(jMenuItem2);
 
-        jMenuItem3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jMenuItem3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jMenuItem3.setText("Padron de Electores");
-        jMenu2.add(jMenuItem3);
+        jmElectores.add(jMenuItem3);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jmElectores);
 
-        jMenu3.setText("Candidatos de la Eleccion");
-        jMenu3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jMenuBar1.add(jMenu3);
+        jmListasYCandidatos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
+        jmListasYCandidatos.setForeground(new java.awt.Color(255, 255, 255));
+        jmListasYCandidatos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/debate.png"))); // NOI18N
+        jmListasYCandidatos.setText("Listas y Candidatos");
+        jmListasYCandidatos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
-        jMenu4.setText("Mesas Electorales");
-        jMenu4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jMenuBar1.add(jMenu4);
+        jMenuItem4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jMenuItem4.setText("Gestionar Listas de candidatos");
+        jmListasYCandidatos.add(jMenuItem4);
+
+        jMenuItem5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jMenuItem5.setText("Publicar candidato ");
+        jmListasYCandidatos.add(jMenuItem5);
+
+        jMenuItem6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jMenuItem6.setText("Generar boletas de candidatos");
+        jmListasYCandidatos.add(jMenuItem6);
+
+        jMenuBar1.add(jmListasYCandidatos);
+
+        jmMesasDeComisio.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
+        jmMesasDeComisio.setForeground(new java.awt.Color(255, 255, 255));
+        jmMesasDeComisio.setText("Autoridades de eleccion");
+        jmMesasDeComisio.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jMenuBar1.add(jmMesasDeComisio);
 
         setJMenuBar(jMenuBar1);
 
@@ -615,6 +662,15 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnMesasDeComisioMouseExited
 
+    /**
+     * Metodo que se accionara una vez que se quite el puntero sobre el menu.
+     *
+     * @param evt
+     */
+    private void jmConfiguracionDeEleccionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmConfiguracionDeEleccionMouseExited
+        
+    }//GEN-LAST:event_jmConfiguracionDeEleccionMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAutoridadesDeMesa;
@@ -628,19 +684,22 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenu jmConfiguracionDeEleccion;
+    private javax.swing.JMenu jmElectores;
+    private javax.swing.JMenu jmListasYCandidatos;
+    private javax.swing.JMenu jmMesasDeComisio;
     private javax.swing.JTable jtCalendar;
     // End of variables declaration//GEN-END:variables
 }

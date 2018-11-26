@@ -1,6 +1,6 @@
 package Vista;
 
-import Controlador.CoordinadorlInicioSistema;
+import Controlador.CoordinadorlInicioMenu;
 
 /**
  *
@@ -20,7 +20,7 @@ public class Login extends javax.swing.JFrame {
      *
      * @param coordinador
      */
-    public void setCoordinador(CoordinadorlInicioSistema coordinador) {
+    public void setCoordinador(CoordinadorlInicioMenu coordinador) {
         btnAceptar.addActionListener(coordinador);
         btnAceptar.setActionCommand("ACEPTAR");
         

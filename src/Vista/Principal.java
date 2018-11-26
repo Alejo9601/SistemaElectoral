@@ -1,6 +1,6 @@
 package Vista;
 
-import Controlador.CoordinadorlInicioSistema;
+import Controlador.CoordinadorlInicioMenu;
 import java.awt.Font;
 
 /**
@@ -24,8 +24,9 @@ public class Principal extends javax.swing.JFrame {
      *
      * @param coordinador
      */
-    public void setCoordinador(CoordinadorlInicioSistema coordinador) {
-        
+    public void setCoordinador(CoordinadorlInicioMenu coordinador) {
+        btnPadronElectoral.addActionListener(coordinador);
+        btnPadronElectoral.setActionCommand("PADRONELECTORAL");
     }
 
     /**

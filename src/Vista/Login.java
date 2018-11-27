@@ -1,6 +1,7 @@
 package Vista;
 
-import Controlador.CoordinadorlInicioMenu;
+import Controlador.CoordinadorLogin;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,12 +21,39 @@ public class Login extends javax.swing.JFrame {
      *
      * @param coordinador
      */
-    public void setCoordinador(CoordinadorlInicioMenu coordinador) {
+    public void setCoordinador(CoordinadorLogin coordinador) {
         btnAceptar.addActionListener(coordinador);
         btnAceptar.setActionCommand("ACEPTAR");
-        
+
         btnSalir.addActionListener(coordinador);
         btnSalir.setActionCommand("SALIR");
+    }
+
+    /**
+     * Devolvera el nombre de usuario ingresado.
+     *
+     * @return
+     */
+    public String getNombreUsuario() {
+        return tfUsuario.getText();
+    }
+
+    /**
+     * Devolvera la contraseña de usuario ingresada.
+     *
+     * @return
+     */
+    public String getContraseñaUsuario() {
+        return pfPassword.getText(); //Hay que comprobar esta API.
+    }
+
+    /**
+     * Mostrara un mensaje de advertencia.
+     *
+     * @param mensaje
+     */
+    public void mostrarMensajeAdvertencia(String mensaje) {
+        JOptionPane.showMessageDialog(this, mensaje, "Advertencia", JOptionPane.WARNING_MESSAGE);
     }
 
     /**
@@ -64,7 +92,7 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setText("USUARIO:");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setText("PASSWORD:");
+        jLabel4.setText("CONTRASEÑA:");
 
         tfUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
@@ -89,9 +117,9 @@ public class Login extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jSeparator1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(tfUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)

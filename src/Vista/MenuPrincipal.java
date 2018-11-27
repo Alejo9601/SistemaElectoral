@@ -1,32 +1,51 @@
 package Vista;
 
-import Controlador.CoordinadorlInicioMenu;
+import Controlador.CoordinadorMenuPrincipal;
 import java.awt.Font;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Alejandro Juarez
  */
-public class Principal extends javax.swing.JFrame {
+public class MenuPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form Principal
      */
-    public Principal() {
+    public MenuPrincipal() {
         initComponents();
-        
         //Configuracion de el header de la tabla
-        jtCalendar.getTableHeader().setFont(new Font("Tahoma", 3, 16)); 
+        jtCalendar.getTableHeader().setFont(new Font("Tahoma", 3, 16));
     }
-    
+
     /**
      * Metodo para setear el coordinador de la ventana.
      *
      * @param coordinador
      */
-    public void setCoordinador(CoordinadorlInicioMenu coordinador) {
+    public void setCoordinador(CoordinadorMenuPrincipal coordinador) {
+        
+        //Accesos rapidos
         btnPadronElectoral.addActionListener(coordinador);
         btnPadronElectoral.setActionCommand("PADRONELECTORAL");
+        btnImportarDatosDeArchivo.addActionListener(coordinador);
+        btnImportarDatosDeArchivo.setActionCommand("IMPORTARELECTORES");
+        
+        //Botones de barra de tareas
+        miImportarElectores.addActionListener(coordinador);
+        miImportarElectores.setActionCommand("IMPORTARELECTORES");
+        miPadronElectores.addActionListener(coordinador);
+        miPadronElectores.setActionCommand("PADRONELECTORAL");
+    }
+
+    /**
+     * Mostrara un mensaje de advertencia.
+     *
+     * @param mensaje
+     */
+    public void mostrarMensajeAdvertencia(String mensaje) {
+        JOptionPane.showMessageDialog(this, mensaje, "Advertencia", JOptionPane.WARNING_MESSAGE);
     }
 
     /**
@@ -57,10 +76,13 @@ public class Principal extends javax.swing.JFrame {
         btnMesasDeComisio = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmConfiguracionDeEleccion = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
         jmElectores = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        miImportarElectores = new javax.swing.JMenuItem();
+        miAltaElector = new javax.swing.JMenuItem();
+        miPadronElectores = new javax.swing.JMenuItem();
         jmListasYCandidatos = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -68,8 +90,9 @@ public class Principal extends javax.swing.JFrame {
         jmMesasDeComisio = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(51, 51, 51));
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jtCalendar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -245,7 +268,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(btnRegistrarElector, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnImportarDatosDeArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPadronElectoral, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(153, 153, 255));
@@ -419,7 +442,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAutoridadesDeMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnMesasDeComisio, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jMenuBar1.setBackground(new java.awt.Color(0, 0, 0));
@@ -435,6 +458,20 @@ public class Principal extends javax.swing.JFrame {
                 jmConfiguracionDeEleccionMouseExited(evt);
             }
         });
+
+        jMenu1.setText("Calendario electoral");
+        jMenu1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        jMenuItem7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jMenuItem7.setText("Agregar actividad");
+        jMenu1.add(jMenuItem7);
+
+        jMenuItem8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jMenuItem8.setText("Modificar actividad");
+        jMenu1.add(jMenuItem8);
+
+        jmConfiguracionDeEleccion.add(jMenu1);
+
         jMenuBar1.add(jmConfiguracionDeEleccion);
 
         jmElectores.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
@@ -443,17 +480,17 @@ public class Principal extends javax.swing.JFrame {
         jmElectores.setText("Electores");
         jmElectores.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
-        jMenuItem1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jMenuItem1.setText("Importar Electores desde archivo");
-        jmElectores.add(jMenuItem1);
+        miImportarElectores.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        miImportarElectores.setText("Importar Electores desde archivo");
+        jmElectores.add(miImportarElectores);
 
-        jMenuItem2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jMenuItem2.setText("Alta de Elector");
-        jmElectores.add(jMenuItem2);
+        miAltaElector.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        miAltaElector.setText("Alta de Elector");
+        jmElectores.add(miAltaElector);
 
-        jMenuItem3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jMenuItem3.setText("Padron de Electores");
-        jmElectores.add(jMenuItem3);
+        miPadronElectores.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        miPadronElectores.setText("Padron de Electores");
+        jmElectores.add(miPadronElectores);
 
         jMenuBar1.add(jmElectores);
 
@@ -505,13 +542,15 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(12, 12, 12))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(12, 12, 12))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -669,7 +708,7 @@ public class Principal extends javax.swing.JFrame {
      * @param evt
      */
     private void jmConfiguracionDeEleccionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmConfiguracionDeEleccionMouseExited
-        
+
     }//GEN-LAST:event_jmConfiguracionDeEleccionMouseExited
 
 
@@ -685,13 +724,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -702,5 +741,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jmListasYCandidatos;
     private javax.swing.JMenu jmMesasDeComisio;
     private javax.swing.JTable jtCalendar;
+    private javax.swing.JMenuItem miAltaElector;
+    private javax.swing.JMenuItem miImportarElectores;
+    private javax.swing.JMenuItem miPadronElectores;
     // End of variables declaration//GEN-END:variables
 }

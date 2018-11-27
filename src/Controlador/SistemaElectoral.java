@@ -11,7 +11,7 @@ public class SistemaElectoral {
      */
     public static void main(String[] args) {
 
-        CoordinadorlInicioMenu control = new CoordinadorlInicioMenu();
+        CoordinadorLogin control = new CoordinadorLogin();
         control.mostrarVistaLogin(true);
 
     }

@@ -31,6 +31,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnPadronElectoral.setActionCommand("PADRONELECTORAL");
         btnImportarDatosDeArchivo.addActionListener(coordinador);
         btnImportarDatosDeArchivo.setActionCommand("IMPORTARELECTORES");
+        btnRegistrarElector.addActionListener(coordinador);
+        btnRegistrarElector.setActionCommand("REGISTRARELECTOR");
         
         //Botones de barra de tareas
         miImportarElectores.addActionListener(coordinador);
@@ -57,20 +59,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jpTablaCalendadario = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtCalendar = new javax.swing.JTable();
-        jPanel2 = new javax.swing.JPanel();
+        jpGestionElectores = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnRegistrarElector = new javax.swing.JButton();
         btnImportarDatosDeArchivo = new javax.swing.JButton();
         btnPadronElectoral = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        jpGestioCandidatos = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btnCrearListaCandidato = new javax.swing.JButton();
         btnPublicarCandidato = new javax.swing.JButton();
         btnGenerarBoletas = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
+        jpGestionComisio = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         btnAutoridadesDeMesa = new javax.swing.JButton();
         btnMesasDeComisio = new javax.swing.JButton();
@@ -92,12 +94,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jpTablaCalendadario.setBackground(new java.awt.Color(102, 102, 102));
+        jpTablaCalendadario.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jtCalendar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jtCalendar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -156,25 +172,25 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jtCalendar.setEnabled(false);
         jScrollPane1.setViewportView(jtCalendar);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jpTablaCalendadarioLayout = new javax.swing.GroupLayout(jpTablaCalendadario);
+        jpTablaCalendadario.setLayout(jpTablaCalendadarioLayout);
+        jpTablaCalendadarioLayout.setHorizontalGroup(
+            jpTablaCalendadarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpTablaCalendadarioLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jpTablaCalendadarioLayout.setVerticalGroup(
+            jpTablaCalendadarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpTablaCalendadarioLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 687, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jpGestionElectores.setBackground(new java.awt.Color(204, 204, 204));
+        jpGestionElectores.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -240,39 +256,39 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jpGestionElectoresLayout = new javax.swing.GroupLayout(jpGestionElectores);
+        jpGestionElectores.setLayout(jpGestionElectoresLayout);
+        jpGestionElectoresLayout.setHorizontalGroup(
+            jpGestionElectoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpGestionElectoresLayout.createSequentialGroup()
+                .addGroup(jpGestionElectoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpGestionElectoresLayout.createSequentialGroup()
                         .addContainerGap(78, Short.MAX_VALUE)
                         .addComponent(btnImportarDatosDeArchivo)
                         .addGap(18, 18, 18)
                         .addComponent(btnRegistrarElector)
                         .addGap(18, 18, 18)
                         .addComponent(btnPadronElectoral))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(jpGestionElectoresLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1)))
                 .addContainerGap(79, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jpGestionElectoresLayout.setVerticalGroup(
+            jpGestionElectoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpGestionElectoresLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpGestionElectoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnRegistrarElector, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnImportarDatosDeArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPadronElectoral, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(153, 153, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jpGestioCandidatos.setBackground(new java.awt.Color(153, 153, 255));
+        jpGestioCandidatos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -285,6 +301,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnCrearListaCandidato.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnCrearListaCandidato.setBorderPainted(false);
         btnCrearListaCandidato.setContentAreaFilled(false);
+        btnCrearListaCandidato.setEnabled(false);
         btnCrearListaCandidato.setFocusable(false);
         btnCrearListaCandidato.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCrearListaCandidato.setIconTextGap(8);
@@ -305,6 +322,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnPublicarCandidato.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnPublicarCandidato.setBorderPainted(false);
         btnPublicarCandidato.setContentAreaFilled(false);
+        btnPublicarCandidato.setEnabled(false);
         btnPublicarCandidato.setFocusable(false);
         btnPublicarCandidato.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnPublicarCandidato.setIconTextGap(8);
@@ -325,6 +343,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnGenerarBoletas.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnGenerarBoletas.setBorderPainted(false);
         btnGenerarBoletas.setContentAreaFilled(false);
+        btnGenerarBoletas.setEnabled(false);
         btnGenerarBoletas.setFocusable(false);
         btnGenerarBoletas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnGenerarBoletas.setIconTextGap(8);
@@ -338,16 +357,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout jpGestioCandidatosLayout = new javax.swing.GroupLayout(jpGestioCandidatos);
+        jpGestioCandidatos.setLayout(jpGestioCandidatosLayout);
+        jpGestioCandidatosLayout.setHorizontalGroup(
+            jpGestioCandidatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpGestioCandidatosLayout.createSequentialGroup()
+                .addGroup(jpGestioCandidatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpGestioCandidatosLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel2))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGroup(jpGestioCandidatosLayout.createSequentialGroup()
                         .addGap(65, 65, 65)
                         .addComponent(btnCrearListaCandidato)
                         .addGap(18, 18, 18)
@@ -356,13 +375,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addComponent(btnGenerarBoletas, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        jpGestioCandidatosLayout.setVerticalGroup(
+            jpGestioCandidatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpGestioCandidatosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jpGestioCandidatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnPublicarCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGroup(jpGestioCandidatosLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnCrearListaCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -370,8 +389,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(204, 255, 204));
-        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jpGestionComisio.setBackground(new java.awt.Color(204, 255, 204));
+        jpGestionComisio.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -384,6 +403,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnAutoridadesDeMesa.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnAutoridadesDeMesa.setBorderPainted(false);
         btnAutoridadesDeMesa.setContentAreaFilled(false);
+        btnAutoridadesDeMesa.setEnabled(false);
         btnAutoridadesDeMesa.setFocusable(false);
         btnAutoridadesDeMesa.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAutoridadesDeMesa.setIconTextGap(8);
@@ -404,6 +424,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnMesasDeComisio.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnMesasDeComisio.setBorderPainted(false);
         btnMesasDeComisio.setContentAreaFilled(false);
+        btnMesasDeComisio.setEnabled(false);
         btnMesasDeComisio.setFocusable(false);
         btnMesasDeComisio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnMesasDeComisio.setIconTextGap(8);
@@ -417,29 +438,29 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout jpGestionComisioLayout = new javax.swing.GroupLayout(jpGestionComisio);
+        jpGestionComisio.setLayout(jpGestionComisioLayout);
+        jpGestionComisioLayout.setHorizontalGroup(
+            jpGestionComisioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpGestionComisioLayout.createSequentialGroup()
+                .addGroup(jpGestionComisioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpGestionComisioLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel3))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGroup(jpGestionComisioLayout.createSequentialGroup()
                         .addGap(75, 75, 75)
                         .addComponent(btnMesasDeComisio)
                         .addGap(18, 18, 18)
                         .addComponent(btnAutoridadesDeMesa)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        jpGestionComisioLayout.setVerticalGroup(
+            jpGestionComisioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpGestionComisioLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpGestionComisioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAutoridadesDeMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnMesasDeComisio, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(17, Short.MAX_VALUE))
@@ -516,6 +537,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jmMesasDeComisio.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
         jmMesasDeComisio.setForeground(new java.awt.Color(255, 255, 255));
+        jmMesasDeComisio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/policia.png"))); // NOI18N
         jmMesasDeComisio.setText("Autoridades de eleccion");
         jmMesasDeComisio.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jMenuBar1.add(jmMesasDeComisio);
@@ -528,12 +550,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jpTablaCalendadario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jpGestionElectores, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jpGestionComisio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jpGestioCandidatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(12, 12, 12))
         );
         layout.setVerticalGroup(
@@ -542,14 +564,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jpTablaCalendadario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(12, 12, 12))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jpGestionElectores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jpGestioCandidatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jpGestionComisio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -731,15 +753,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenu jmConfiguracionDeEleccion;
     private javax.swing.JMenu jmElectores;
     private javax.swing.JMenu jmListasYCandidatos;
     private javax.swing.JMenu jmMesasDeComisio;
+    private javax.swing.JPanel jpGestioCandidatos;
+    private javax.swing.JPanel jpGestionComisio;
+    private javax.swing.JPanel jpGestionElectores;
+    private javax.swing.JPanel jpTablaCalendadario;
     private javax.swing.JTable jtCalendar;
     private javax.swing.JMenuItem miAltaElector;
     private javax.swing.JMenuItem miImportarElectores;

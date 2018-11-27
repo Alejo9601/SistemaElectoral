@@ -1,7 +1,7 @@
 package Controlador;
 
 import Vista.MenuPrincipal;
-import Vista.PrevisualizacionPadron;
+import Vista.PadronElectoral;
 import java.awt.FileDialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
  * @author Alejandro Juarez
  */
 public class CoordinadorMenuPrincipal implements ActionListener {
-
+    
     private static MenuPrincipal menu;
     private FileDialog dialogoArchivo;
 
@@ -27,7 +27,7 @@ public class CoordinadorMenuPrincipal implements ActionListener {
     }
 
     /**
-     * Muestra la ventana de menu principal, o no, segun la condicion.
+     * Muestra la ventana de menu principal, .
      *
      * @param condicion
      */
@@ -59,11 +59,13 @@ public class CoordinadorMenuPrincipal implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         switch (ae.getActionCommand()) {
             case "PADRONELECTORAL":
-                PrevisualizacionPadron padron = new PrevisualizacionPadron();
+                PadronElectoral padron = new PadronElectoral();
                 padron.setVisible(true);
                 padron.setLocationRelativeTo(null);
                 break;
-            case "REGISTRARUSUARIO":
+            case "REGISTRARELECTOR":
+                CoordinadorElectores coordinador = new CoordinadorElectores();
+                coordinador.mostrarVistaRegistroElector(menu);
                 break;
             case "IMPORTARELECTORES":
                 mostrarVistaSeleccionArchivo();
@@ -77,7 +79,7 @@ public class CoordinadorMenuPrincipal implements ActionListener {
                 }
                 break;
         }
-
+        
     }
-
+    
 }

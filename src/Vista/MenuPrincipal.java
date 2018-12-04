@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 public class MenuPrincipal extends javax.swing.JFrame {
 
     /**
-     * Creates new form Principal
+     * Creates new form Principal=
      */
     public MenuPrincipal() {
         initComponents();
@@ -24,8 +24,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      *
      * @param coordinador
      */
-    public void setCoordinador(CoordinadorMenuPrincipal coordinador) {
-        
+    public void setCoordinador(CoordinadorMenuPrincipal coordinador) {       
         //Accesos rapidos
         btnPadronElectoral.addActionListener(coordinador);
         btnPadronElectoral.setActionCommand("PADRONELECTORAL");
@@ -39,6 +38,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         miImportarElectores.setActionCommand("IMPORTARELECTORES");
         miPadronElectores.addActionListener(coordinador);
         miPadronElectores.setActionCommand("PADRONELECTORAL");
+        miAltaElector.addActionListener(coordinador);
+        miAltaElector.setActionCommand("REGISTRARELECTOR");
     }
 
     /**
@@ -76,11 +77,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         btnAutoridadesDeMesa = new javax.swing.JButton();
         btnMesasDeComisio = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        mbBarraDeTareas = new javax.swing.JMenuBar();
         jmConfiguracionDeEleccion = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
+        mCalendario = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        miUsuarios = new javax.swing.JMenuItem();
         jmElectores = new javax.swing.JMenu();
         miImportarElectores = new javax.swing.JMenuItem();
         miAltaElector = new javax.swing.JMenuItem();
@@ -92,7 +94,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jmMesasDeComisio = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema de Gestion Electoral");
         setBackground(new java.awt.Color(51, 51, 51));
+        setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         jpTablaCalendadario.setBackground(new java.awt.Color(102, 102, 102));
         jpTablaCalendadario.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -466,40 +470,44 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        jMenuBar1.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuBar1.setForeground(new java.awt.Color(255, 255, 255));
+        mbBarraDeTareas.setBackground(new java.awt.Color(0, 0, 0));
+        mbBarraDeTareas.setForeground(new java.awt.Color(255, 255, 255));
 
         jmConfiguracionDeEleccion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
         jmConfiguracionDeEleccion.setForeground(new java.awt.Color(255, 255, 255));
         jmConfiguracionDeEleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/ajustes.png"))); // NOI18N
         jmConfiguracionDeEleccion.setText("Configuracion de la Eleccion");
-        jmConfiguracionDeEleccion.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jmConfiguracionDeEleccion.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jmConfiguracionDeEleccion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jmConfiguracionDeEleccionMouseExited(evt);
             }
         });
 
-        jMenu1.setText("Calendario electoral");
-        jMenu1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        mCalendario.setText("Calendario electoral");
+        mCalendario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         jMenuItem7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jMenuItem7.setText("Agregar actividad");
-        jMenu1.add(jMenuItem7);
+        mCalendario.add(jMenuItem7);
 
         jMenuItem8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jMenuItem8.setText("Modificar actividad");
-        jMenu1.add(jMenuItem8);
+        mCalendario.add(jMenuItem8);
 
-        jmConfiguracionDeEleccion.add(jMenu1);
+        jmConfiguracionDeEleccion.add(mCalendario);
 
-        jMenuBar1.add(jmConfiguracionDeEleccion);
+        miUsuarios.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        miUsuarios.setText("Tribunal Electoral (Usuarios)");
+        jmConfiguracionDeEleccion.add(miUsuarios);
+
+        mbBarraDeTareas.add(jmConfiguracionDeEleccion);
 
         jmElectores.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
         jmElectores.setForeground(new java.awt.Color(255, 255, 255));
         jmElectores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/usuario.png"))); // NOI18N
         jmElectores.setText("Electores");
-        jmElectores.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jmElectores.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
 
         miImportarElectores.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         miImportarElectores.setText("Importar Electores desde archivo");
@@ -513,13 +521,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         miPadronElectores.setText("Padron de Electores");
         jmElectores.add(miPadronElectores);
 
-        jMenuBar1.add(jmElectores);
+        mbBarraDeTareas.add(jmElectores);
 
         jmListasYCandidatos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
         jmListasYCandidatos.setForeground(new java.awt.Color(255, 255, 255));
         jmListasYCandidatos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/debate.png"))); // NOI18N
         jmListasYCandidatos.setText("Listas y Candidatos");
-        jmListasYCandidatos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jmListasYCandidatos.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
 
         jMenuItem4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jMenuItem4.setText("Gestionar Listas de candidatos");
@@ -533,16 +541,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuItem6.setText("Generar boletas de candidatos");
         jmListasYCandidatos.add(jMenuItem6);
 
-        jMenuBar1.add(jmListasYCandidatos);
+        mbBarraDeTareas.add(jmListasYCandidatos);
 
         jmMesasDeComisio.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
         jmMesasDeComisio.setForeground(new java.awt.Color(255, 255, 255));
         jmMesasDeComisio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/policia.png"))); // NOI18N
         jmMesasDeComisio.setText("Autoridades de eleccion");
-        jmMesasDeComisio.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jMenuBar1.add(jmMesasDeComisio);
+        jmMesasDeComisio.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        mbBarraDeTareas.add(jmMesasDeComisio);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(mbBarraDeTareas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -746,8 +754,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
@@ -763,8 +769,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jpGestionElectores;
     private javax.swing.JPanel jpTablaCalendadario;
     private javax.swing.JTable jtCalendar;
+    private javax.swing.JMenu mCalendario;
+    private javax.swing.JMenuBar mbBarraDeTareas;
     private javax.swing.JMenuItem miAltaElector;
     private javax.swing.JMenuItem miImportarElectores;
     private javax.swing.JMenuItem miPadronElectores;
+    private javax.swing.JMenuItem miUsuarios;
     // End of variables declaration//GEN-END:variables
 }

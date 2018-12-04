@@ -1,0 +1,5 @@
+
+Para consultar la existencia de un usuario en la base de datos
+--------------------------------------------------------------
+"SELECT * FROM usuario WHERE nombre ='" + nombre + "' AND contraseña = '" + contraseña + "'" 
+

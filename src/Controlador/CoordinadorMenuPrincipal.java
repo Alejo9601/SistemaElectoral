@@ -1,19 +1,19 @@
 package Controlador;
 
 import Vista.MenuPrincipal;
-import Vista.PadronElectoral;
 import java.awt.FileDialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 /**
  *
  * @author Alejandro Juarez
  */
 public class CoordinadorMenuPrincipal implements ActionListener {
-    
-    private static MenuPrincipal menu;
-    private FileDialog dialogoArchivo;
+
+    private static MenuPrincipal menu; //Ventana principal o Menu
+    private FileDialog dialogoArchivo; //Ventana de seleccion de archivo.
 
     /**
      * Constructor de la clase.
@@ -27,15 +27,15 @@ public class CoordinadorMenuPrincipal implements ActionListener {
     }
 
     /**
-     * Muestra la ventana de menu principal, .
+     * Muestra la ventana de menu principal.
      *
      * @param condicion
      */
     public void mostrarVistaPrincipal(boolean condicion) {
-        if (condicion == false) {
+        if (condicion == false) {//Si la condicion es falsa cierro el menu principal.
             menu.dispose();
         }
-        if (condicion == true) {
+        if (condicion == true) {//Si la condicion es true muestro el menu principal.
             menu.setVisible(true);
             menu.setLocationRelativeTo(null);
         }
@@ -46,26 +46,27 @@ public class CoordinadorMenuPrincipal implements ActionListener {
      *
      */
     private void mostrarVistaSeleccionArchivo() {
+        dialogoArchivo.setFilenameFilter((File dir, String name) -> name.endsWith(".xls") || name.endsWith(".xlsx"));
         dialogoArchivo.setVisible(true);
         dialogoArchivo.setLocationRelativeTo(null);
     }
 
     /**
-     * Sobreescribe el metodo actionPerformed de ActionListener.
+     * Sobreescribe el metodo actionPerformed de ActionListener, el metodo
+     * utilizara objetos del sistema en dependencia del evento originado por el
+     * usuario en la interfaz grafica.
      *
      * @param ae
      */
     @Override
     public void actionPerformed(ActionEvent ae) {
+        CoordinadorElectores CE = new CoordinadorElectores();
         switch (ae.getActionCommand()) {
             case "PADRONELECTORAL":
-                PadronElectoral padron = new PadronElectoral();
-                padron.setVisible(true);
-                padron.setLocationRelativeTo(null);
+                CE.mostrarVistaPadronElectoral(true);
                 break;
             case "REGISTRARELECTOR":
-                CoordinadorElectores coordinador = new CoordinadorElectores();
-                coordinador.mostrarVistaRegistroElector(menu);
+                CE.mostrarVistaRegistroElector(menu);
                 break;
             case "IMPORTARELECTORES":
                 mostrarVistaSeleccionArchivo();
@@ -74,12 +75,10 @@ public class CoordinadorMenuPrincipal implements ActionListener {
                     String directorio = dialogoArchivo.getDirectory();
                     String nombreArchivo = dialogoArchivo.getFile();
                     String rutatotal = directorio + nombreArchivo;
-                } else {
-                    menu.mostrarMensajeAdvertencia("No se selecciono ningun archivo");
                 }
                 break;
         }
-        
+
     }
-    
+
 }

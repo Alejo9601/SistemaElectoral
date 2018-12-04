@@ -1,3 +1,7 @@
+/**
+ *  Esta clase actua como mediadora o coordinadora entre las acciones que solicita
+ *  el usuario a traves de la ventana y el modelo de solucion planteado.
+ */
 package Controlador;
 
 import Modelo.Logica.GestorUsuario;
@@ -14,7 +18,7 @@ public class CoordinadorLogin implements ActionListener {
     private final Login ventanaLogin;
 
     /**
-     * Constructor de la clase
+     * Constructor de la clase.
      */
     public CoordinadorLogin() {
         ventanaLogin = new Login();
@@ -27,10 +31,10 @@ public class CoordinadorLogin implements ActionListener {
      * @param condicion
      */
     public void mostrarVistaLogin(boolean condicion) {
-        if (condicion == false) {
+        if (condicion == false) {//Si la condicion es false cierro la ventana.
             ventanaLogin.dispose();
         }
-        if (condicion == true) {
+        if (condicion == true) {//Si la condicion es true muestro la ventana.
             ventanaLogin.setVisible(true);
             ventanaLogin.setLocationRelativeTo(null);
         }
@@ -40,17 +44,14 @@ public class CoordinadorLogin implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
 
         switch (ae.getActionCommand()) {
-
             case "ACEPTAR":
-
                 String usuario = ventanaLogin.getNombreUsuario();
                 String contraseña = ventanaLogin.getContraseñaUsuario();
-
+                
                 //Si el usuario y la contraseña son distintas a un string vacio.
                 if ((!usuario.equals("")) && (!contraseña.equals(""))) {
                     //Nuevo gestor de usuario para validar la sesion.
-                    GestorUsuario gestorUsuario = new GestorUsuario();
-                    if (gestorUsuario.validarSesion(usuario, contraseña) == true) {
+                    if (GestorUsuario.validarSesion(usuario, contraseña) == true) {
                         //Creo el coordinador del menu principal y lo muestro.
                         CoordinadorMenuPrincipal coordinador = new CoordinadorMenuPrincipal();
                         coordinador.mostrarVistaPrincipal(true);
@@ -66,7 +67,6 @@ public class CoordinadorLogin implements ActionListener {
                     ventanaLogin.mostrarMensajeAdvertencia("El campo 'Contraseña' no puede estar vacio");
                 }
                 break;
-
             case "SALIR":
                 System.exit(0);
                 break;

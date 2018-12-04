@@ -1,6 +1,7 @@
 package Vista;
 
 import java.awt.Font;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -15,9 +16,32 @@ public class PadronElectoral extends javax.swing.JFrame {
         initComponents();
     }
 
-    
-    public void setControlador() {
-        
+    /**
+     * Metodo que seteara el coordinador de la ventana.
+     */
+    public void setCoordinador() {
+
+    }
+
+    /**
+     * Metodo para agregar el modelo de tabla estudiantes.
+     *
+     * @param tAlumnos
+     */
+    public void setModeloTablaAlumnos(DefaultTableModel tAlumnos) {
+        tblAlumnos.setFont(new Font("Tahoma", 0, 22));
+        tblAlumnos.setAlignmentY(CENTER_ALIGNMENT);
+        tblAlumnos.setAlignmentX(CENTER_ALIGNMENT);
+        tblAlumnos.setRowHeight(40);
+        tblAlumnos.setModel(tAlumnos);
+
+    }
+
+    /**
+     * Metodo para agregar el modelo de tabla docentes.
+     */
+    public void setModeloTablaDocentes() {
+
     }
 
     /**
@@ -29,22 +53,131 @@ public class PadronElectoral extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel4 = new javax.swing.JPanel();
+        tpContenedorSolapas = new javax.swing.JTabbedPane();
+        pnlPadronAlumnos = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
+        tblAlumnos = new javax.swing.JTable();
+        btnEliminarAlumno = new javax.swing.JButton();
+        btnModificarAlumno = new javax.swing.JButton();
+        tfBusquedaNroDoc = new javax.swing.JTextField();
+        btnBuscarAlumno = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        pnlPadronDocentes = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        btnEliminarDocente = new javax.swing.JButton();
+        btnModificarDocente = new javax.swing.JButton();
+        jTextField2 = new javax.swing.JTextField();
+        jButton8 = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        pnlBotoneraPadron = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Padron de Electores");
+        setResizable(false);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tpContenedorSolapas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        tblAlumnos.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tblAlumnos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        tblAlumnos.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        tblAlumnos.setShowHorizontalLines(true);
+        jScrollPane2.setViewportView(tblAlumnos);
+
+        btnEliminarAlumno.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnEliminarAlumno.setText("Eliminar");
+
+        btnModificarAlumno.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnModificarAlumno.setText("Modificar");
+
+        btnBuscarAlumno.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnBuscarAlumno.setText("Buscar por DNI");
+
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        javax.swing.GroupLayout pnlPadronAlumnosLayout = new javax.swing.GroupLayout(pnlPadronAlumnos);
+        pnlPadronAlumnos.setLayout(pnlPadronAlumnosLayout);
+        pnlPadronAlumnosLayout.setHorizontalGroup(
+            pnlPadronAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPadronAlumnosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(tfBusquedaNroDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnBuscarAlumno)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEliminarAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnModificarAlumno)
+                .addContainerGap())
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1366, Short.MAX_VALUE)
+        );
+        pnlPadronAlumnosLayout.setVerticalGroup(
+            pnlPadronAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPadronAlumnosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlPadronAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1)
+                    .addGroup(pnlPadronAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnEliminarAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnModificarAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tfBusquedaNroDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBuscarAlumno)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE))
+        );
+
+        tpContenedorSolapas.addTab("Alumnos", pnlPadronAlumnos);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -88,7 +221,7 @@ public class PadronElectoral extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nombres", "Apellido", "DNI", "Cant. Materias", "Ult. Reinscripcion", "Localidad", "Otros Claustros"
+                "Nombres", "Apellido", "DNI", "Cant. Materias", "Ult. Reinscripcion", "Localidad", "Auxiliar"
             }
         ) {
             Class[] types = new Class [] {
@@ -99,102 +232,95 @@ public class PadronElectoral extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane3.setViewportView(jTable2);
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setText("Eliminar");
+        btnEliminarDocente.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnEliminarDocente.setText("Eliminar");
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton3.setText("Modificar");
+        btnModificarDocente.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnModificarDocente.setText("Modificar");
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton5.setText("Buscar por DNI");
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jButton8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton8.setText("Buscar por DNI");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(553, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96)
-                .addComponent(jButton5)
+        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        javax.swing.GroupLayout pnlPadronDocentesLayout = new javax.swing.GroupLayout(pnlPadronDocentes);
+        pnlPadronDocentes.setLayout(pnlPadronDocentesLayout);
+        pnlPadronDocentesLayout.setHorizontalGroup(
+            pnlPadronDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPadronDocentesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
+                .addComponent(btnEliminarDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnModificarDocente)
                 .addContainerGap())
-            .addComponent(jScrollPane2)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1366, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+        pnlPadronDocentesLayout.setVerticalGroup(
+            pnlPadronDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPadronDocentesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1)
-                        .addComponent(jButton5)))
+                .addGroup(pnlPadronDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator2)
+                    .addGroup(pnlPadronDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnEliminarDocente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnModificarDocente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPadronDocentesLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pnlPadronDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton8))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
         );
 
-        jTabbedPane1.addTab("Alumnos", jPanel4);
+        tpContenedorSolapas.addTab("Docentes", pnlPadronDocentes);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1366, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 664, Short.MAX_VALUE)
-        );
+        pnlBotoneraPadron.setBackground(new java.awt.Color(153, 153, 153));
 
-        jTabbedPane1.addTab("Docentes", jPanel2);
-
-        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
-
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton4.setText("Generar listado provisional");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlBotoneraPadronLayout = new javax.swing.GroupLayout(pnlBotoneraPadron);
+        pnlBotoneraPadron.setLayout(pnlBotoneraPadronLayout);
+        pnlBotoneraPadronLayout.setHorizontalGroup(
+            pnlBotoneraPadronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBotoneraPadronLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton4)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+        pnlBotoneraPadronLayout.setVerticalGroup(
+            pnlBotoneraPadronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBotoneraPadronLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
                 .addComponent(jButton4)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGap(19, 19, 19))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(tpContenedorSolapas)
+            .addComponent(pnlBotoneraPadron, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(tpContenedorSolapas, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(pnlBotoneraPadron, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -202,17 +328,24 @@ public class PadronElectoral extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnBuscarAlumno;
+    private javax.swing.JButton btnEliminarAlumno;
+    private javax.swing.JButton btnEliminarDocente;
+    private javax.swing.JButton btnModificarAlumno;
+    private javax.swing.JButton btnModificarDocente;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JButton jButton8;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPanel pnlBotoneraPadron;
+    private javax.swing.JPanel pnlPadronAlumnos;
+    private javax.swing.JPanel pnlPadronDocentes;
+    private javax.swing.JTable tblAlumnos;
+    private javax.swing.JTextField tfBusquedaNroDoc;
+    private javax.swing.JTabbedPane tpContenedorSolapas;
     // End of variables declaration//GEN-END:variables
 }

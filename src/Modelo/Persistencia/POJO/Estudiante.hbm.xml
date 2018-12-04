@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 1, 2018 1:53:29 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Persistencia.POJO.Estudiante" table="estudiante" catalog="sistema_electoral" optimistic-lock="version">
+        <id name="dni" type="long">
+            <column name="dni" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="carrera" class="Modelo.Persistencia.POJO.Carrera" fetch="select">
+            <column name="carrera_codigocarrera" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" not-null="true" />
+        </property>
+        <property name="apellido" type="string">
+            <column name="apellido" length="45" not-null="true" />
+        </property>
+        <property name="legajo" type="string">
+            <column name="legajo" length="45" not-null="true" />
+        </property>
+        <property name="utimaIncripcion" type="int">
+            <column name="utimaIncripcion" not-null="true" />
+        </property>
+        <property name="cantMaterias" type="int">
+            <column name="cantMaterias" not-null="true" />
+        </property>
+        <property name="localidad" type="string">
+            <column name="localidad" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
